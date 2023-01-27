@@ -3,6 +3,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    /*스크롤바 커스텀*/
+    .no-scrollbar::-webkit-scrollbar {
+      width: 14px; /* 스크롤바의 너비 */
+      height: 14px;
+    }
+    .no-scrollbar::-webkit-scrollbar-track {
+      background: none;
+    }
+    .no-scrollbar::-webkit-scrollbar-thumb {
+      /* height: 30%; 스크롤바의 길이 */
+      background: lightgray; /* 스크롤바의 색상 */
+      border-radius: 10px;
+      background-clip: padding-box;
+      border: 5px solid transparent;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
 
 @layer base {
   html {

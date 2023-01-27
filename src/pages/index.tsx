@@ -1,3 +1,9 @@
+import { Icon } from '@/components/common/Icon';
+
 export default function Home() {
-  return <>Hello Next</>;
+  return (
+    <>
+      <Icon iconName="check" />
+    </>
+  );
 }
