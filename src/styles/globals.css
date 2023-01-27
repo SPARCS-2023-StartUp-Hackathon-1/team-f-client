@@ -1,0 +1,43 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    /*스크롤바 커스텀*/
+    .no-scrollbar::-webkit-scrollbar {
+      width: 14px; /* 스크롤바의 너비 */
+      height: 14px;
+    }
+    .no-scrollbar::-webkit-scrollbar-track {
+      background: none;
+    }
+    .no-scrollbar::-webkit-scrollbar-thumb {
+      /* height: 30%; 스크롤바의 길이 */
+      background: lightgray; /* 스크롤바의 색상 */
+      border-radius: 10px;
+      background-clip: padding-box;
+      border: 5px solid transparent;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+      Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    font-size: 10px;
+  }
+  ,
+  li {
+    list-style: none;
+  }
+}
