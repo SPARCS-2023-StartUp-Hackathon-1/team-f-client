@@ -44,8 +44,6 @@ const BUTTON_STYLE = {
   },
 };
 
-console.log(`${BUTTON_STYLE['primary']['press']}`);
-
 export const Button = ({ buttonText, buttonType, isDisabled }: PropsWithChildren<ButtonProps>) => {
   return (
     <>
