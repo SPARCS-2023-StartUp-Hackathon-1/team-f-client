@@ -1,3 +1,5 @@
+import '../styles/globals.css';
+
 import type { AppProps } from 'next/app';
 import type { ComponentProps } from 'react';
 import { Suspense } from 'react';
@@ -6,7 +8,7 @@ import { RecoilRoot } from 'recoil';
 import GlobalErrorFallback from '@/components/GlobalErrorFallback';
 import QueryClientProvider from '@/components/QueryClientProvider';
 import QueryErrorBoundary from '@/components/QueryErrorBoundary';
-import RecoilDebugObserver from '@/components/RecolDebugObserver';
+import RecoilDebugObserver from '@/components/RecoilDebugObserver';
 
 interface PageProps {
   dehydratedState: ComponentProps<typeof QueryClientProvider>['dehydratedState'];
