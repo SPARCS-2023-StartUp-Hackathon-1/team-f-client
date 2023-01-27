@@ -1,11 +1,11 @@
-import type { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 
 type ButtonType = 'extra' | 'sub' | 'primary' | 'gray';
-type ButtonStyleType = 'none' | 'default' | 'hover' | 'press' | 'error';
 
 interface ButtonProps {
   buttonType: ButtonType;
-  buttonStyle: ButtonStyleType;
+  isDisabled?: boolean;
+  buttonText?: string;
 }
 
 const BUTTON_STYLE = {
@@ -22,8 +22,7 @@ const BUTTON_STYLE = {
       'bg-gray-200 w-[5.2rem] h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
     hover:
       'bg-gray-400 w-[5.2rem] h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
-    press:
-      'bg-gray-600 w-[5.2rem] h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
+    press: 'bg-gray-600',
     error: '',
   },
   primary: {
@@ -32,8 +31,7 @@ const BUTTON_STYLE = {
       'bg-primary-default h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
     hover:
       'bg-primary-hover h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
-    press:
-      'bg-primary-press h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
+    press: 'bg-primary-press',
     error:
       'bg-system-error h-[5.6rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
   },
@@ -41,11 +39,28 @@ const BUTTON_STYLE = {
     none: '',
     default: 'bg-gray-200 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
     hover: 'bg-gray-400 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
-    press: 'bg-gray-600 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
+    press: 'bg-gray-600',
     error: '',
   },
 };
 
-export const Button = ({ children, buttonType, buttonStyle }: PropsWithChildren<ButtonProps>) => {
-  return <button className={` ${BUTTON_STYLE[buttonType][buttonStyle]}`}>{children}</button>;
+export const Button = ({ buttonText, buttonType, isDisabled }: PropsWithChildren<ButtonProps>) => {
+  return (
+    <>
+      {isDisabled ? (
+        <input
+          type="button"
+          value={buttonText}
+          disabled
+          className={`${BUTTON_STYLE[buttonType]['none']}`}
+        />
+      ) : (
+        <button
+          className={`${BUTTON_STYLE[buttonType]['default']} active:${BUTTON_STYLE[buttonType]['press']}`}
+        >
+          {buttonText}
+        </button>
+      )}
+    </>
+  );
 };
