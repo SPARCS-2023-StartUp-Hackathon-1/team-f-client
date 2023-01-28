@@ -3,6 +3,7 @@ import { useTailQuestionById } from '@/hooks/queries/useTailQuestionByIdQuery';
 import {
   questionAtomFamily,
   QuestionAtomFamilyProps,
+  questionMarkAtom,
   questionOrderAtom,
   tailQuestionAtomFamily,
   tailQuestionIdAtomFamily,
@@ -18,7 +19,8 @@ import { Input } from '../common/Input';
 import { UserBubble } from '../common/UserBubble';
 
 const TailQuestion = ({ id }: { id: number }) => {
-  const order = useRecoilValue(questionOrderAtom);
+  const [order, setOrder] = useRecoilState(questionOrderAtom);
+  const [mark, setMark] = useRecoilState(questionMarkAtom);
   const setQuestion = useSetRecoilState(questionAtomFamily(order));
   const { data: tailQuestionData, isSuccess: tailQuestionIsSuccess } = useTailQuestionById(id);
   const [tailQuestion, setTailQuestion] = useRecoilState(
@@ -49,9 +51,10 @@ const TailQuestion = ({ id }: { id: number }) => {
     if (tailQuestionIsSuccess) setTailQuestionIds(prev => [...prev, tailQuestionData.id]);
   };
 
-  const handleNextButtonClick = () => {};
-
-  const handleTailAnswerButtonClick = () => {};
+  const handleNextButtonClick = () => {
+    setOrder(mark + 1);
+    setMark(prev => prev + 1);
+  };
 
   const handleAnswerButtonClick = () => {
     setTailQuestion(prev => ({

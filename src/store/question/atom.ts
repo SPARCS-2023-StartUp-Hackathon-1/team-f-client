@@ -63,10 +63,16 @@ const questionOrderAtom = atom({
   default: 1,
 });
 
+const questionMarkAtom = atom({
+  key: 'questionMarkAtom',
+  default: 1,
+});
+
 export {
   questionAtomFamily,
   questionOrderAtom,
   tailQuestionAtomFamily,
   tailQuestionIdAtomFamily,
   questionIsSubmitAtom,
+  questionMarkAtom,
 };

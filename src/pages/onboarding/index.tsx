@@ -4,7 +4,11 @@ import { GNB } from '@/components/common/GNB';
 import Select from '@/components/common/Select';
 import { useMainCategoryQuery } from '@/hooks/queries/useMainCategoryQuery';
 import useCategoryButton from '@/hooks/useCategoryButton';
+import { questionAtomFamily, questionOrderAtom } from '@/store/question';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { useRecoilValue } from 'recoil';
 
 export async function getStaticProps() {
   const queryClient = new QueryClient();
@@ -19,8 +23,15 @@ export async function getStaticProps() {
 }
 
 const Onboarding = () => {
+  const router = useRouter();
+  const order = useRecoilValue(questionOrderAtom);
+  const question = useRecoilValue(questionAtomFamily(order));
   const { data, isSuccess } = useMainCategoryQuery();
   const { handleClick, isDisabled } = useCategoryButton({ type: 'main' });
+
+  useEffect(() => {
+    if (question.basicQuestion.id !== 0) router.reload();
+  }, [order]);
 
   return (
     <div className="h-full">

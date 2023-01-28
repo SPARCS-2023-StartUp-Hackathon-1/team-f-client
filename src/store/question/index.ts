@@ -4,6 +4,7 @@ import {
   tailQuestionAtomFamily,
   tailQuestionIdAtomFamily,
   questionIsSubmitAtom,
+  questionMarkAtom,
 } from './atom';
 
 export {
@@ -12,4 +13,5 @@ export {
   tailQuestionAtomFamily,
   tailQuestionIdAtomFamily,
   questionIsSubmitAtom,
+  questionMarkAtom,
 };

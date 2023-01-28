@@ -1,7 +1,12 @@
 import { useAnswerById } from '@/hooks/queries/useAnswerById';
-import { questionAtomFamily, questionOrderAtom, tailQuestionIdAtomFamily } from '@/store/question';
+import {
+  questionAtomFamily,
+  questionMarkAtom,
+  questionOrderAtom,
+  tailQuestionIdAtomFamily,
+} from '@/store/question';
 import { ChangeEvent, useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { AIBubble } from '../common/AIBubble';
 import { Button } from '../common/Button';
 import { Chip } from '../common/Chip';
@@ -12,12 +17,9 @@ import { PageMark } from '../common/pageMark';
 import { UserBubble } from '../common/UserBubble';
 import TailQuestion from './TailQuestion';
 
-interface QuestionProps {
-  defaultQuestion: Question;
-}
-
 const Question = () => {
   const [order, setOrder] = useRecoilState(questionOrderAtom);
+  const [mark, setMark] = useRecoilState(questionMarkAtom);
   const [question, setQuestion] = useRecoilState(questionAtomFamily(order));
   const [tailQuestionIds, setTailQuestionIds] = useRecoilState(tailQuestionIdAtomFamily(order));
   const { data: aiAnswerData, isSuccess: aiAnswerIsSuccess } = useAnswerById(
@@ -58,15 +60,30 @@ const Question = () => {
   };
 
   const handleNextButtonClick = () => {
-    setOrder(prev => prev + 1);
+    setOrder(mark + 1);
+    setMark(prev => prev + 1);
   };
 
   const handleTailAnswerButtonClick = () => {};
 
+  const handleOrderClick = (index: number) => {
+    setOrder(index + 1);
+  };
+
   return (
     <div className="h-full pb-[100px]">
       <div className="h-[64px] flex items-center">
-        <PageMark pageNumber={order} isActive={true} />
+        {Array(mark)
+          .fill(0)
+          .map((_, index) => (
+            <div
+              key={index}
+              className="first:ml-0 ml-[0.8rem]"
+              onClick={() => handleOrderClick(index)}
+            >
+              <PageMark pageNumber={index + 1} isActive={order === index + 1} />
+            </div>
+          ))}
       </div>
       <AIBubble
         questionChip={<Chip text={'일반 질문'} chipType={'default'} />}
