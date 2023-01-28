@@ -1,4 +1,4 @@
-import { PropsWithChildren, useState } from 'react';
+import type { PropsWithChildren } from 'react';
 
 type ButtonType = 'extra' | 'sub' | 'primary' | 'gray' | 'red';
 
