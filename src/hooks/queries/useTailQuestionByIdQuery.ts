@@ -5,6 +5,7 @@ export const useTailQuestionById = (questionId: number) => {
   const TailQuestion = useQuery({
     queryKey: ['tailQuestion', questionId],
     queryFn: () => getTailQuestionById(questionId),
+    enabled: !!questionId,
   });
   return TailQuestion;
 };
