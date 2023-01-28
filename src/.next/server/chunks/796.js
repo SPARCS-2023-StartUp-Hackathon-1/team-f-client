@@ -21,7 +21,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axio
 axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 const axiosClient = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
-    baseURL: process.env.NEXT_PUBLIC_SERVER_BASE_URL
+    baseURL: "https://qtail.hackathon.sparcs.org/api/v1"
 });
 const getMainCategories = async ()=>{
     const { data: { categories  } ,  } = await axiosClient.get("/categories/main");

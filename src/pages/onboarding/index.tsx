@@ -11,17 +11,17 @@ import { useMainCategoryQuery } from '@/hooks/queries/useMainCategoryQuery';
 import { useRecoilValue } from 'recoil';
 import { useRouter } from 'next/router';
 
-// export async function getStaticProps() {
-//   const queryClient = new QueryClient();
+export async function getStaticProps() {
+  const queryClient = new QueryClient();
 
-//   await queryClient.prefetchQuery(['mainCategories'], getMainCategories);
+  await queryClient.prefetchQuery(['mainCategories'], getMainCategories);
 
-//   return {
-//     props: {
-//       dehydratedState: dehydrate(queryClient),
-//     },
-//   };
-// }
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
 
 const Onboarding = () => {
   const router = useRouter();
