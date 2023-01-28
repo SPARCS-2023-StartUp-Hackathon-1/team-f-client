@@ -1,9 +1,9 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
-export interface GNBProps {
-  buttonNode: ReactNode;
-}
-
-export const GNB = ({ buttonNode }: GNBProps) => {
-  return <div className="flex justify-between p-[16px] w-full bg-gray-0">{buttonNode}</div>;
+export const GNB = ({ children }: PropsWithChildren) => {
+  return (
+    <nav className="fixed bottom-0 left-0 w-full p-[1.6rem] bg-gray-0">
+      <div className="">{children}</div>
+    </nav>
+  );
 };
