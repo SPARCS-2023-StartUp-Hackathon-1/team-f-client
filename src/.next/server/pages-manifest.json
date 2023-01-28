@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/": "pages/index.html",
+  "/onboarding/[mainCategoryId]": "pages/onboarding/[mainCategoryId].html",
+  "/question/[categoryId]": "pages/question/[categoryId].html",
+  "/_error": "pages/_error.js",
+  "/onboarding": "pages/onboarding.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
