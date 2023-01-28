@@ -6,6 +6,7 @@ export default function Home() {
   const onClick = () => {
     router.push('/onboarding');
   };
+  
   return (
     <div className="w-full flex-col text-center">
       <header className="pt-[75px] text-h2 text-gray-600">Service Name</header>

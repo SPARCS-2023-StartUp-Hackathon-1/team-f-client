@@ -1,9 +1,9 @@
+import type { ComponentProps } from 'react';
 import { Modal } from '@/components/common/Modal';
 import { useOverlay } from '@toss/use-overlay';
-import type { ComponentProps } from 'react';
 import { useRef } from 'react';
 
-export function useModal() {
+function useModal() {
   const overlay = useOverlay();
   const ref = useRef<HTMLDivElement>(null);
 

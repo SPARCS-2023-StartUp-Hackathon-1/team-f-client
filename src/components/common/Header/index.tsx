@@ -1,6 +1,6 @@
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { useModal } from '@/hooks/useModal';
+import useModal from '../../../hooks/useModal';
 import { useRouter } from 'next/router';
 
 export interface HeaderProps {
