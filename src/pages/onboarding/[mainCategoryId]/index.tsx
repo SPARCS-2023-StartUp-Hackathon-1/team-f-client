@@ -33,10 +33,8 @@ const Category = () => {
         <section className="grid grid-cols-2 gap-[0.8rem] mt-[2rem]">
           {data?.categories.map((category, index) => {
             return (
-              // eslint-disable-next-line react/jsx-key
-              <Link href={`/question/${category.id}`}>
+              <Link key={index} href={`/question/${category.id}`}>
                 <Image
-                  key={index}
                   src={category.imageUrl === '' ? IMAGE_SRC : `${category.imageUrl}`}
                   width={160}
                   height={160}
