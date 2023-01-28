@@ -25,7 +25,8 @@ interface AnswerResponse {
 }
 
 export const axiosClient = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_SERVER_URL}`,
+  baseURL: 'http://ec2-15-164-217-100.ap-northeast-2.compute.amazonaws.com:8080/api/v1',
+  headers: { 'Content-Type': 'application/json; charset=utf-8' },
 });
 
 export const getMainCategories = async () => {
