@@ -1,5 +1,8 @@
 {
   "/api/v1/*": "/$1",
+  "/categories/main": "/main",
+  "/categories/mid": "/mid",
+  "/categories/mid\\?mainCategoryId=:mainCategoryId": "/mid",
   "/questions\\?midCategoryId=:midCategoryId": "/questions",
   "/questions/:questionId/answer": "/questions-id-answer",
   "/questions/:questionId/tail": "/questions-id-tail"
