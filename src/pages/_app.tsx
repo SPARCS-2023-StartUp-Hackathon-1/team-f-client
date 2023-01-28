@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
           <QueryErrorBoundary ErrorFallback={GlobalErrorFallback}>
             <RecoilDebugObserver />
             <Suspense fallback={<>Global Suspense</>}>
-              <Component {...pageProps} />
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </Suspense>
           </QueryErrorBoundary>
         </QueryClientProvider>
