@@ -1,14 +1,15 @@
-import { getMainCategories } from '@/apis';
+import { QueryClient, dehydrate } from '@tanstack/react-query';
+import { questionAtomFamily, questionOrderAtom } from '@/store/question';
+
 import { Button } from '@/components/common/Button';
 import { GNB } from '@/components/common/GNB';
 import Select from '@/components/common/Select';
-import { useMainCategoryQuery } from '@/hooks/queries/useMainCategoryQuery';
+import { getMainCategories } from '@/apis';
 import useCategoryButton from '@/hooks/useCategoryButton';
-import { questionAtomFamily, questionOrderAtom } from '@/store/question';
-import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useMainCategoryQuery } from '@/hooks/queries/useMainCategoryQuery';
 import { useRecoilValue } from 'recoil';
+import { useRouter } from 'next/router';
 
 export async function getStaticProps() {
   const queryClient = new QueryClient();

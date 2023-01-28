@@ -3,7 +3,7 @@ import { Modal } from '@/components/common/Modal';
 import { useOverlay } from '@toss/use-overlay';
 import { useRef } from 'react';
 
-function useModal() {
+export function useModal() {
   const overlay = useOverlay();
   const ref = useRef<HTMLDivElement>(null);
 

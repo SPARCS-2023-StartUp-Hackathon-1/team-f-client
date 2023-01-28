@@ -1,6 +1,6 @@
 import selectAtomFamily from '@/store/select';
-import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
+import { useRouter } from 'next/router';
 
 interface UseCategoryButtonProps {
   type: 'main' | 'mid';
