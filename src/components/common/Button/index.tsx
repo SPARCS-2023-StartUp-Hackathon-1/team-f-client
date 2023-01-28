@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState } from 'react';
 
-type ButtonType = 'extra' | 'sub' | 'primary' | 'gray';
+type ButtonType = 'extra' | 'sub' | 'primary' | 'gray' | 'red';
 
 interface ButtonProps {
   buttonType: ButtonType;
@@ -38,6 +38,13 @@ const BUTTON_STYLE = {
     default: 'bg-gray-200 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
     hover: 'bg-gray-400 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
     press: 'bg-gray-600',
+    error: '',
+  },
+  red: {
+    none: '',
+    default: 'bg-system-error h-[5.6rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
+    hover: '',
+    press: '',
     error: '',
   },
 };
