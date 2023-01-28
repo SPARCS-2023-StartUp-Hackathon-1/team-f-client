@@ -1,11 +1,12 @@
+import { questionAtomFamily, questionOrderAtom, tailQuestionIdAtomFamily } from '@/store/question';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+
 import { Header } from '@/components/common/Header';
 import Question from '@/components/Question';
 import { useDefaultQuestionQuery } from '@/hooks/queries/useDefaultQuestionQuery';
-import { useMidCategoryByIdQuery } from '@/hooks/queries/useMidCategoryByIdQuery';
-import { questionAtomFamily, questionOrderAtom, tailQuestionIdAtomFamily } from '@/store/question';
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useMidCategoryByIdQuery } from '@/hooks/queries/useMidCategoryByIdQuery';
+import { useRouter } from 'next/router';
 
 const QuestionPage = () => {
   const router = useRouter();
@@ -19,7 +20,6 @@ const QuestionPage = () => {
   const order = useRecoilValue(questionOrderAtom);
   const setQuestion = useSetRecoilState(questionAtomFamily(order));
   const setTailQuestionIds = useSetRecoilState(tailQuestionIdAtomFamily(order));
-
   useEffect(() => {
     if (defaultQuestionIsSuccess) {
       setQuestion(prev => ({
