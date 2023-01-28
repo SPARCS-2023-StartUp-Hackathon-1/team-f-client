@@ -5,7 +5,7 @@ exports.id = 820;
 exports.ids = [820];
 exports.modules = {
 
-/***/ 2648:
+/***/ 2619:
 /***/ ((__unused_webpack_module, exports) => {
 
 var __webpack_unused_export__;
@@ -23,7 +23,7 @@ function _interopRequireDefault(obj) {
 
 /***/ }),
 
-/***/ 9185:
+/***/ 6698:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -31,7 +31,7 @@ Object.defineProperty(exports, "__esModule", ({
     value: true
 }));
 exports["default"] = void 0;
-var _interop_require_default = (__webpack_require__(2648)/* ["default"] */ .Z);
+var _interop_require_default = (__webpack_require__(2619)/* ["default"] */ .Z);
 var _react = _interop_require_default(__webpack_require__(6689));
 var _head = _interop_require_default(__webpack_require__(4957));
 const statusCodes = {
@@ -142,7 +142,7 @@ module.exports = require("react");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(9185));
+var __webpack_exports__ = (__webpack_exec__(6698));
 module.exports = __webpack_exports__;
 
 })();
