@@ -10,6 +10,7 @@ import QueryClientProvider from '@/components/QueryClientProvider';
 import QueryErrorBoundary from '@/components/QueryErrorBoundary';
 import RecoilDebugObserver from '@/components/RecoilDebugObserver';
 import Layout from '@/components/common/Layout';
+import { OverlayProvider } from '@toss/use-overlay';
 
 interface PageProps {
   dehydratedState: ComponentProps<typeof QueryClientProvider>['dehydratedState'];
@@ -17,18 +18,18 @@ interface PageProps {
 
 function MyApp({ Component, pageProps }: AppProps<PageProps>) {
   return (
-    <RecoilRoot>
-      <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
-        <QueryErrorBoundary ErrorFallback={GlobalErrorFallback}>
-          <RecoilDebugObserver />
-          <Suspense fallback={<>Global Suspense</>}>
-            <Layout>
+    <OverlayProvider>
+      <RecoilRoot>
+        <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
+          <QueryErrorBoundary ErrorFallback={GlobalErrorFallback}>
+            <RecoilDebugObserver />
+            <Suspense fallback={<>Global Suspense</>}>
               <Component {...pageProps} />
-            </Layout>
-          </Suspense>
-        </QueryErrorBoundary>
-      </QueryClientProvider>
-    </RecoilRoot>
+            </Suspense>
+          </QueryErrorBoundary>
+        </QueryClientProvider>
+      </RecoilRoot>
+    </OverlayProvider>
   );
 }
 
