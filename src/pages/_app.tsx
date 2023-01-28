@@ -2,15 +2,14 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import type { ComponentProps } from 'react';
-import { Suspense } from 'react';
-import { RecoilRoot } from 'recoil';
-
 import GlobalErrorFallback from '@/components/GlobalErrorFallback';
+import Layout from '@/components/common/Layout';
+import { OverlayProvider } from '@toss/use-overlay';
 import QueryClientProvider from '@/components/QueryClientProvider';
 import QueryErrorBoundary from '@/components/QueryErrorBoundary';
 import RecoilDebugObserver from '@/components/RecoilDebugObserver';
-import Layout from '@/components/common/Layout';
-import { OverlayProvider } from '@toss/use-overlay';
+import { RecoilRoot } from 'recoil';
+import { Suspense } from 'react';
 
 interface PageProps {
   dehydratedState: ComponentProps<typeof QueryClientProvider>['dehydratedState'];
