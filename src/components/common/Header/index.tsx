@@ -27,7 +27,7 @@ export const Header = ({ headerTitle }: HeaderProps) => {
               buttonText="취소"
             />
             <Button
-              buttonType="primary"
+              buttonType="red"
               onClick={() => {
                 router.push('/onboarding');
               }}
