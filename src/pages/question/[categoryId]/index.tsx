@@ -16,7 +16,6 @@ const QuestionPage = () => {
   const midCategoryId = router.query.categoryId;
   const { data: midCategory } = useMidCategoryByIdQuery(Number(midCategoryId));
   const { data: defaultQuestion } = useDefaultQuestionQuery(Number(midCategoryId));
-
   const [isDisabled, setIsDisabled] = useState(true);
   const [userAns, setUserAns] = useState('');
 
