@@ -27,19 +27,16 @@ const BUTTON_STYLE = {
     error: '',
   },
   primary: {
-    none: 'bg-gray-100 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-400 text-subtitle w-full',
-    default:
-      'bg-primary-default h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
-    hover:
-      'bg-primary-hover h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
+    none: 'bg-gray-100 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-400 text-subtitle',
+    default: 'bg-primary-default h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
+    hover: 'bg-primary-hover h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
     press: 'bg-primary-press',
-    error:
-      'bg-system-error h-[5.6rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
+    error: 'bg-system-error h-[5.6rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
   },
   gray: {
     none: '',
-    default: 'bg-gray-200 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
-    hover: 'bg-gray-400 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle w-full',
+    default: 'bg-gray-200 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
+    hover: 'bg-gray-400 h-[5.2rem] rounded-[0.8rem] p-[1.6rem] text-gray-0 text-subtitle',
     press: 'bg-gray-600',
     error: '',
   },
@@ -58,12 +55,12 @@ export const Button = ({
           type="button"
           value={buttonText}
           disabled
-          className={`${BUTTON_STYLE[buttonType]['none']}`}
+          className={`${BUTTON_STYLE[buttonType]['none']} w-full`}
         />
       ) : (
         <button
           onClick={onClick}
-          className={`${BUTTON_STYLE[buttonType]['default']} active:${BUTTON_STYLE[buttonType]['press']}`}
+          className={`${BUTTON_STYLE[buttonType]['default']} active:${BUTTON_STYLE[buttonType]['press']} w-full`}
         >
           {buttonText}
         </button>

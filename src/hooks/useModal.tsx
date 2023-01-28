@@ -14,7 +14,12 @@ export function useModal() {
           <>
             {isOpen ? (
               <div
-                className="flex top-0 fixed w-full h-full items-center bg-black bg-opacity-50"
+                style={{
+                  position: 'fixed',
+                  top: '0',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+                className="w-full flex h-full items-center"
                 ref={ref}
                 onClick={(e: React.MouseEvent) => {
                   {
