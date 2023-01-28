@@ -9,6 +9,7 @@ import GlobalErrorFallback from '@/components/GlobalErrorFallback';
 import QueryClientProvider from '@/components/QueryClientProvider';
 import QueryErrorBoundary from '@/components/QueryErrorBoundary';
 import RecoilDebugObserver from '@/components/RecoilDebugObserver';
+import Layout from '@/components/common/Layout';
 
 interface PageProps {
   dehydratedState: ComponentProps<typeof QueryClientProvider>['dehydratedState'];
@@ -21,7 +22,9 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
         <QueryErrorBoundary ErrorFallback={GlobalErrorFallback}>
           <RecoilDebugObserver />
           <Suspense fallback={<>Global Suspense</>}>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </Suspense>
         </QueryErrorBoundary>
       </QueryClientProvider>
