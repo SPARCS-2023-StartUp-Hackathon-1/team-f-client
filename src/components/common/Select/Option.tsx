@@ -1,5 +1,5 @@
-import useSelect from '@/hooks/useSelect';
 import { Icon } from '../Icon';
+import useSelect from '@/hooks/useSelect';
 
 interface OptionProps {
   id: number;

@@ -1,8 +1,8 @@
 import { Button } from '@/components/common/Button';
 import { Icon } from '@/components/common/Icon';
-import { useMidCategoryQuery } from '@/hooks/queries/useMidCategoryQuery';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMidCategoryQuery } from '@/hooks/queries/useMidCategoryQuery';
 import { useRouter } from 'next/router';
 
 const IMAGE_SRC =
@@ -33,9 +33,8 @@ const Category = () => {
         <section className="grid grid-cols-2 gap-[0.8rem] mt-[2rem]">
           {data?.categories.map((category, index) => {
             return (
-              <Link href={`/question/${category.id}`}>
+              <Link key={index} href={`/question/${category.id}`}>
                 <Image
-                  key={index}
                   src={category.imageUrl === '' ? IMAGE_SRC : `${category.imageUrl}`}
                   width={160}
                   height={160}

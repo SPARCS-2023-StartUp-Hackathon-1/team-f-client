@@ -1,8 +1,8 @@
+import { Button } from '../Button';
+import { Icon } from '../Icon';
+// eslint-disable-next-line import/no-named-as-default
 import useModal from '@/hooks/useModal';
 import { useRouter } from 'next/router';
-import { Button } from '../Button';
-
-import { Icon } from '../Icon';
 
 export interface HeaderProps {
   headerTitle: string;

@@ -1,3 +1,7 @@
+import { useRouter } from 'next/router';
+import type { ChangeEvent } from 'react';
+import { useState } from 'react';
+
 import { AIBubble } from '@/components/common/AIBubble';
 import { Button } from '@/components/common/Button';
 import { Chip } from '@/components/common/Chip';
@@ -8,8 +12,6 @@ import { PageMark } from '@/components/common/pageMark';
 import { useAnswerById } from '@/hooks/queries/useAnswerById';
 import { useDefaultQuestionQuery } from '@/hooks/queries/useDefaultQuestionQuery';
 import { useMidCategoryByIdQuery } from '@/hooks/queries/useMidCategoryByIdQuery';
-import { useRouter } from 'next/router';
-import { ChangeEvent, useEffect, useState } from 'react';
 
 const QuestionPage = () => {
   const router = useRouter();
@@ -31,7 +33,8 @@ const QuestionPage = () => {
     return null;
   }
 
-  const { data: answer, isSuccess, isLoading } = useAnswerById(Number(defaultQuestion.id));
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { data: answer } = useAnswerById(Number(defaultQuestion.id));
 
   const onClick = () => {
     sessionStorage.setItem(`${midCategory.id}`, `${userAns}`);

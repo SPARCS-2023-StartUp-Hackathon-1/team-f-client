@@ -1,5 +1,5 @@
+import type { PropsWithChildren } from 'react';
 import { useRouter } from 'next/router';
-import { PropsWithChildren, useState } from 'react';
 
 const Layout = ({ children }: PropsWithChildren) => {
   const router = useRouter();
