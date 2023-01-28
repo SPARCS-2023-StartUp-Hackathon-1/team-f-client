@@ -3,8 +3,9 @@ import { useQuery } from '@tanstack/react-query';
 
 export const useAnswerById = (questionId: number) => {
   const defaultQuestion = useQuery({
-    queryKey: ['answer'],
+    queryKey: ['answer', questionId],
     queryFn: () => getAnswerById(questionId),
+    enabled: !!questionId,
   });
   return defaultQuestion;
 };

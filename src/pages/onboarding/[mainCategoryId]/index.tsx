@@ -10,7 +10,7 @@ const IMAGE_SRC =
 
 const Category = () => {
   const router = useRouter();
-  const { data } = useMidCategoryQuery({ id: router.query.mainCategoryId as string });
+  const { data, isSuccess } = useMidCategoryQuery({ id: router.query.mainCategoryId as string });
 
   const handleChangeButtonClick = () => {
     router.back();
@@ -26,7 +26,7 @@ const Category = () => {
         <section>
           <p className="text-b1 text-gray-600">내 희망직무</p>
           <div className="flex justify-between items-center mt-[0.8rem]">
-            <p className="text-h2 text-gray-800">{data?.name}</p>
+            {isSuccess && <p className="text-h2 text-gray-800">{data.name}</p>}
             <Button onClick={handleChangeButtonClick} buttonText="변경" buttonType="extra" />
           </div>
         </section>

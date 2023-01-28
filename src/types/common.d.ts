@@ -6,3 +6,7 @@ interface Category {
 interface MidCategory extends Category {
   imageUrl: string;
 }
+interface Question {
+  id: number;
+  question: string;
+}

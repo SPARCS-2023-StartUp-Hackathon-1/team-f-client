@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 
 type ButtonType = 'extra' | 'sub' | 'primary' | 'gray' | 'red';
 
@@ -6,6 +6,7 @@ interface ButtonProps {
   buttonType: ButtonType;
   isDisabled?: boolean;
   buttonText?: string;
+  buttonIcon?: ReactNode;
   onClick: () => void;
 }
 
@@ -53,6 +54,7 @@ export const Button = ({
   onClick,
   buttonText,
   buttonType,
+  buttonIcon,
   isDisabled,
 }: PropsWithChildren<ButtonProps>) => {
   return (
@@ -69,7 +71,7 @@ export const Button = ({
           onClick={onClick}
           className={`${BUTTON_STYLE[buttonType]['default']} active:${BUTTON_STYLE[buttonType]['press']} w-full`}
         >
-          {buttonText}
+          {buttonText || buttonIcon}
         </button>
       )}
     </>

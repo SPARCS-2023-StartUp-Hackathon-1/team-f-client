@@ -25,8 +25,7 @@ interface AnswerResponse {
 }
 
 export const axiosClient = axios.create({
-  baseURL: 'http://ec2-15-164-217-100.ap-northeast-2.compute.amazonaws.com:8080/api/v1',
-  headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  baseURL: `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`,
 });
 
 export const getMainCategories = async () => {
@@ -53,7 +52,7 @@ export const getMidCategoryById = async (midCategoryId: number) => {
 export const getDefaultQuestion = async (midCategoryId: number) => {
   const {
     data: { id, question },
-  } = await axiosClient.get<DefaultQuestionResponse>(`/questions?/midCategoryId=${midCategoryId}`);
+  } = await axiosClient.get<DefaultQuestionResponse>(`/questions?midCategoryId=${midCategoryId}`);
   return { id, question };
 };
 
@@ -62,4 +61,11 @@ export const getAnswerById = async (questionId: number) => {
     data: { id, answer },
   } = await axiosClient.get<AnswerResponse>(`/questions/${questionId}/answer`);
   return { id, answer };
+};
+
+export const getTailQuestionById = async (questionId: number) => {
+  const {
+    data: { id, question },
+  } = await axiosClient.get<DefaultQuestionResponse>(`/questions/${questionId}/tail`);
+  return { id, question };
 };

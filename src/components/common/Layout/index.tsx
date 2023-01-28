@@ -6,9 +6,9 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       {router.pathname === '/' || router.pathname === '/onboarding/[mainCategoryId]' ? (
-        <main className="bg-gray-0 px-[1.6rem] h-full">{children}</main>
+        <main className="bg-gray-0 px-[1.6rem] h-full overflow-scroll">{children}</main>
       ) : (
-        <main className="bg-gray-50 px-[1.6rem] h-full">{children}</main>
+        <main className="bg-gray-50 px-[1.6rem] h-full overflow-scroll">{children}</main>
       )}
     </>
   );
