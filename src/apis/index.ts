@@ -3,6 +3,10 @@ import axios from 'axios';
 interface CategoryResponse<T = Record<string, unknown>> {
   categories: T;
 }
+interface MidCategoryResponse<T = Record<string, unknown>> {
+  name: string;
+  categories: T;
+}
 
 interface MidCategoryByIdResponse {
   id: number;
@@ -29,6 +33,13 @@ export const getMainCategories = async () => {
     data: { categories },
   } = await axiosClient.get<CategoryResponse<Category[]>>('/categories/main');
   return categories;
+};
+
+export const getMidCategories = async ({ id }: { id: string }) => {
+  const { data } = await axiosClient.get<MidCategoryResponse<MidCategory[]>>('/categories/mid', {
+    params: { mainCategoryId: id },
+  });
+  return data;
 };
 
 export const getMidCategoryById = async (midCategoryId: number) => {
