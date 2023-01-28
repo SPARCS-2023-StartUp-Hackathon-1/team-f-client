@@ -6,6 +6,7 @@ interface ButtonProps {
   buttonType: ButtonType;
   isDisabled?: boolean;
   buttonText?: string;
+  onClick: () => void;
 }
 
 const BUTTON_STYLE = {
@@ -44,7 +45,12 @@ const BUTTON_STYLE = {
   },
 };
 
-export const Button = ({ buttonText, buttonType, isDisabled }: PropsWithChildren<ButtonProps>) => {
+export const Button = ({
+  onClick,
+  buttonText,
+  buttonType,
+  isDisabled,
+}: PropsWithChildren<ButtonProps>) => {
   return (
     <>
       {isDisabled ? (
@@ -56,6 +62,7 @@ export const Button = ({ buttonText, buttonType, isDisabled }: PropsWithChildren
         />
       ) : (
         <button
+          onClick={onClick}
           className={`${BUTTON_STYLE[buttonType]['default']} active:${BUTTON_STYLE[buttonType]['press']}`}
         >
           {buttonText}
