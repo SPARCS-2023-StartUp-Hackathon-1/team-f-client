@@ -44,7 +44,7 @@ export const Header = ({ headerTitle }: HeaderProps) => {
     // TODO: home으로 라우팅
   };
   return (
-    <div className="w-full bg-gray-50 flex pl-[22px] h-[64px] items-center pr-[46px]">
+    <div className="w-full bg-gray-50 flex pl-[6px] h-[48px] items-center pr-[46px]">
       <div className="cursor-pointer" onClick={onClick}>
         <Icon iconName="toGoHome" />
       </div>

@@ -16,7 +16,7 @@ export const Input = ({ onChange, value }: InputProps) => {
   };
 
   return (
-    <div className="flex-col relative w-full">
+    <div className="flex-col relative w-full mt-[20px]">
       <textarea
         value={value}
         id="input"

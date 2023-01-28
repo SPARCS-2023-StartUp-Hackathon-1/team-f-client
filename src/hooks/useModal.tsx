@@ -19,7 +19,7 @@ export function useModal() {
                   top: '0',
                   backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 }}
-                className="w-[calc(100%+16px*2)] ml-[-16px] mr-[16px] flex h-full items-center"
+                className="w-full flex h-full items-center"
                 ref={ref}
                 onClick={(e: React.MouseEvent) => {
                   {

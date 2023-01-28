@@ -9,7 +9,7 @@ export const AIBubbleSkeleton = ({ questionChip, answerChip }: AIBubbleProps) =>
   return (
     <>
       {answerChip ? (
-        <div className="flex-col relative w-full">
+        <div className="flex-col relative w-full mt-[20px]">
           <div className="break-all px-[16px] py-[24px] rounded-t-[8px] rounded-bl-[0px] rounded-br-[8px] w-full bg-gray-0 text-subtitle text-gray-700">
             <div className="mb-[8px]">{questionChip}</div>
             <div className="animate-pulse bg-gray-100 rounded-[8px] h-[20px]"></div>
@@ -26,7 +26,7 @@ left-0 bottom-[-11px]
           />
         </div>
       ) : (
-        <div className="flex-col relative w-full">
+        <div className="flex-col relative w-full mt-[20px]">
           <div className="break-all px-[16px] py-[24px] rounded-t-[8px] rounded-bl-[0px] rounded-br-[8px] w-full bg-gray-0 text-subtitle text-gray-700">
             <div className="mb-[8px]">{questionChip}</div>
             <div className="animate-pulse bg-gray-100 rounded-[8px] h-[20px]"></div>
