@@ -28,6 +28,7 @@
     ]
   },
   "mid": {
+    "name": "웹 개발",
     "categories": [
       {
         "id": 1,
@@ -60,6 +61,11 @@
         "imageUrl": ""
       }
     ]
+  },
+  "mid-id": {
+    "id": 1,
+    "name": "html/css",
+    "imageUrl": "imageUrl"
   },
   "questions": {
     "id": 1,
