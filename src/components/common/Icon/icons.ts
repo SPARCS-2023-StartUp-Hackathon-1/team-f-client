@@ -6,6 +6,7 @@ import { default as setting } from './icons/setting.svg';
 import { default as toGoHome } from './icons/toGoHome.svg';
 import { default as upArrow } from './icons/upArrow.svg';
 import { default as logo } from './icons/logo.svg';
+import { default as reload } from './icons/reload.svg';
 
 export const ICONS = {
   check: check,
@@ -16,6 +17,7 @@ export const ICONS = {
   toGoHome: toGoHome,
   upArrow: upArrow,
   logo: logo,
+  reload: reload,
 };
 
 export type IconName = keyof typeof ICONS;
