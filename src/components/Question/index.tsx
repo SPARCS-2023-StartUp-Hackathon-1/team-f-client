@@ -1,12 +1,11 @@
-import { useAnswerById } from '@/hooks/queries/useAnswerById';
+import { ChangeEvent, useEffect } from 'react';
 import {
   questionAtomFamily,
   questionMarkAtom,
   questionOrderAtom,
   tailQuestionIdAtomFamily,
 } from '@/store/question';
-import { ChangeEvent, useEffect } from 'react';
-import { useRecoilState } from 'recoil';
+
 import { AIBubble } from '../common/AIBubble';
 import { Button } from '../common/Button';
 import { Chip } from '../common/Chip';
@@ -14,8 +13,10 @@ import { GNB } from '../common/GNB';
 import { Icon } from '../common/Icon';
 import { Input } from '../common/Input';
 import { PageMark } from '../common/pageMark';
-import { UserBubble } from '../common/UserBubble';
 import TailQuestion from './TailQuestion';
+import { UserBubble } from '../common/UserBubble';
+import { useAnswerById } from '@/hooks/queries/useAnswerById';
+import { useRecoilState } from 'recoil';
 
 const Question = () => {
   const [order, setOrder] = useRecoilState(questionOrderAtom);
@@ -98,7 +99,7 @@ const Question = () => {
       {!question.isTailQuestion && (
         <GNB>
           {isUserAnswer && !question.isTailQuestion ? (
-            <div className="grid grid-cols-[0.8fr_0.2fr] gap-[1rem]">
+            <div className="flex gap-[1rem]">
               <Button onClick={handleTailButtonClick} buttonType="primary" buttonText="꼬리 질문" />
               <Button
                 onClick={handleNextButtonClick}

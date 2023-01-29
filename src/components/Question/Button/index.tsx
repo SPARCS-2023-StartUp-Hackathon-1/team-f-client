@@ -6,7 +6,7 @@ const QuestionButton = () => {
   return (
     <GNB>
       {' '}
-      <div className="grid grid-cols-[0.8fr_0.2fr] gap-[1rem]">
+      <div className="flex gap-[1rem]">
         {/* <Button onClick={handleTailButtonClick} buttonType="primary" buttonText="꼬리 질문" /> */}
         {/* <Button */}
         {/* onClick={handleNextButtonClick} */}

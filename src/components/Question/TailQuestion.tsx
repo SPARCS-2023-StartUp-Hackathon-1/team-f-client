@@ -1,15 +1,14 @@
-import { useAnswerById } from '@/hooks/queries/useAnswerById';
-import { useTailQuestionById } from '@/hooks/queries/useTailQuestionByIdQuery';
+import { ChangeEvent, useEffect } from 'react';
 import {
-  questionAtomFamily,
   QuestionAtomFamilyProps,
+  questionAtomFamily,
   questionMarkAtom,
   questionOrderAtom,
   tailQuestionAtomFamily,
   tailQuestionIdAtomFamily,
 } from '@/store/question/atom';
-import { ChangeEvent, useEffect } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+
 import { AIBubble } from '../common/AIBubble';
 import { Button } from '../common/Button';
 import { Chip } from '../common/Chip';
@@ -17,6 +16,8 @@ import { GNB } from '../common/GNB';
 import { Icon } from '../common/Icon';
 import { Input } from '../common/Input';
 import { UserBubble } from '../common/UserBubble';
+import { useAnswerById } from '@/hooks/queries/useAnswerById';
+import { useTailQuestionById } from '@/hooks/queries/useTailQuestionByIdQuery';
 
 const TailQuestion = ({ id }: { id: number }) => {
   const [order, setOrder] = useRecoilState(questionOrderAtom);
@@ -78,7 +79,7 @@ const TailQuestion = ({ id }: { id: number }) => {
       {isUserAnswer && <UserBubble answer={tailQuestion.userAnswer.answer} />}
       <GNB>
         {isUserAnswer ? (
-          <div className="grid grid-cols-[0.8fr_0.2fr] gap-[1rem]">
+          <div className="flex gap-[1rem]">
             <Button onClick={handleTailButtonClick} buttonType="primary" buttonText="꼬리 질문" />
             <Button
               onClick={handleNextButtonClick}
