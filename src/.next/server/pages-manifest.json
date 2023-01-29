@@ -1,8 +1,8 @@
 {
-  "/_app": "pages/_app.js",
-  "/": "pages/index.html",
-  "/onboarding/[mainCategoryId]": "pages/onboarding/[mainCategoryId].html",
   "/_error": "pages/_error.js",
+  "/": "pages/index.html",
+  "/_app": "pages/_app.js",
+  "/onboarding/[mainCategoryId]": "pages/onboarding/[mainCategoryId].html",
   "/onboarding": "pages/onboarding.js",
   "/question/[categoryId]": "pages/question/[categoryId].js",
   "/_document": "pages/_document.js",
