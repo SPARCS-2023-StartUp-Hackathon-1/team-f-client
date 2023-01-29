@@ -141,3 +141,6 @@ $ nest start
 `chore` : 기타 작업에 대한 커밋
 <br/>
 
+## 📞 Contact
+
+<a href="mailto:teamf.sparcs@gmail.com"><img src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=teamf.sparcs@gmail.com"/></a>
