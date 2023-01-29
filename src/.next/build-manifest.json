@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/SAec7d9_LIHJOJbKrjn2K/_buildManifest.js",
-    "static/SAec7d9_LIHJOJbKrjn2K/_ssgManifest.js"
+    "static/vMTdLrTb9d1E0SytWJnVC/_buildManifest.js",
+    "static/vMTdLrTb9d1E0SytWJnVC/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -14,13 +14,13 @@
       "static/chunks/webpack-5752944655d749a0.js",
       "static/chunks/framework-706b777f121deb6c.js",
       "static/chunks/main-fd08f47f83890b37.js",
-      "static/chunks/pages/index-687c74417a90570c.js"
+      "static/chunks/pages/index-9f2e0dc8dc8185e9.js"
     ],
     "/_app": [
       "static/chunks/webpack-5752944655d749a0.js",
       "static/chunks/framework-706b777f121deb6c.js",
       "static/chunks/main-fd08f47f83890b37.js",
-      "static/css/efddc5ab196fa377.css",
+      "static/css/8242407f431fcc01.css",
       "static/chunks/pages/_app-d52068ed05aa5720.js"
     ],
     "/_error": [
@@ -51,7 +51,7 @@
       "static/chunks/main-fd08f47f83890b37.js",
       "static/chunks/39-e8ec610808864fe9.js",
       "static/chunks/616-a0f2a064ea24b3fe.js",
-      "static/chunks/pages/question/[categoryId]-a40c709db0ad133d.js"
+      "static/chunks/pages/question/[categoryId]-c8730bf0bec54880.js"
     ]
   },
   "ampFirstPages": []
