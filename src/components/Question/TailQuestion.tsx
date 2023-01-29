@@ -48,8 +48,11 @@ const TailQuestion = ({ id }: { id: number }) => {
 
   const isDisabled = tailQuestion.userAnswer.answer === '' && !isUserAnswer;
 
+  const tailIsDisabled = tailQuestionIds.length >= 3;
+
   const handleTailButtonClick = () => {
-    if (tailQuestionIsSuccess) setTailQuestionIds(prev => [...prev, tailQuestionData.id]);
+    if (tailQuestionIsSuccess && !tailIsDisabled)
+      setTailQuestionIds(prev => [...prev, tailQuestionData.id]);
   };
 
   const handleNextButtonClick = () => {
@@ -79,8 +82,13 @@ const TailQuestion = ({ id }: { id: number }) => {
       {isUserAnswer && <UserBubble answer={tailQuestion.userAnswer.answer} />}
       <GNB>
         {isUserAnswer ? (
-          <div className="flex gap-[1rem]">
-            <Button onClick={handleTailButtonClick} buttonType="primary" buttonText="꼬리 질문" />
+          <div className="grid grid-cols-[0.8fr_0.2fr] gap-[1rem]">
+            <Button
+              onClick={handleTailButtonClick}
+              buttonType="primary"
+              buttonText="꼬리 질문"
+              isDisabled={tailIsDisabled}
+            />
             <Button
               onClick={handleNextButtonClick}
               buttonType="sub"

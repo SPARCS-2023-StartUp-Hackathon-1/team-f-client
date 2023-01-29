@@ -65,8 +65,6 @@ const Question = () => {
     setMark(prev => prev + 1);
   };
 
-  const handleTailAnswerButtonClick = () => {};
-
   const handleOrderClick = (index: number) => {
     setOrder(index + 1);
   };

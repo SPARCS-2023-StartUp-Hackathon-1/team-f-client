@@ -1,4 +1,4 @@
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { Header } from '@/components/common/Header';
 import Question from '@/components/Question';
@@ -27,8 +27,9 @@ const QuestionPage = () => {
   } = useDefaultQuestionQuery(Number(midCategoryId));
   const order = useRecoilValue(questionOrderAtom);
   const mark = useRecoilValue(questionMarkAtom);
-  const setQuestion = useSetRecoilState(questionAtomFamily(order));
+  const [question, setQuestion] = useRecoilState(questionAtomFamily(order));
   const setTailQuestionIds = useSetRecoilState(tailQuestionIdAtomFamily(order));
+
   useEffect(() => {
     if (mark === order) defaultQuestionRefetch();
   }, [order]);
