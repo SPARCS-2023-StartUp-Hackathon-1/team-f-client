@@ -1,14 +1,11 @@
 # 🧹 team-f-client
-
-<img src="https://user-images.githubusercontent.com/77181984/175760346-a164f36f-3c12-41ab-9a06-2f86885baf9a.png" width="650"/><br/>
-개발
 > 웹 페이지 주소  https://team-f-client-ra1mz07mm-qtail.vercel.app/
 
 <br/>
 
 ## 🎬 Preview
 
-<img src="https://user-images.githubusercontent.com/77181984/175762475-ac741a33-9a1b-414f-97d8-0f92abc45f1e.png" width="230"/> &nbsp;&nbsp;  <img src="https://user-images.githubusercontent.com/77181984/175762490-add086a6-13c6-46ca-a309-f9813c009457.png" width="230"/> 
+<img alt="온보딩" src="https://user-images.githubusercontent.com/62706048/215301335-51acf430-c1f9-46fb-b77a-77ad7af8f620.png" width="200"/> &nbsp;&nbsp; <img alt="첫 시작" src="https://user-images.githubusercontent.com/62706048/215301336-a2f18276-89c6-4224-9d0c-b216035b0613.png" width="200"/> &nbsp;&nbsp; <img alt="예시 페이지" src="https://user-images.githubusercontent.com/62706048/215301346-fef73581-8df9-49ce-aeea-f67a76554ded.png" width="200"/>
 
 <br/>
 
