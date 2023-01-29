@@ -1,21 +1,35 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-
-import { Header } from '@/components/common/Header';
-import Question from '@/components/Question';
-import { useDefaultQuestionQuery } from '@/hooks/queries/useDefaultQuestionQuery';
 import {
   questionAtomFamily,
   questionMarkAtom,
   questionOrderAtom,
   tailQuestionIdAtomFamily,
 } from '@/store/question';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+
+import { Header } from '@/components/common/Header';
+import Question from '@/components/Question';
+import { useDefaultQuestionQuery } from '@/hooks/queries/useDefaultQuestionQuery';
 import { useEffect } from 'react';
 import { useMidCategoryByIdQuery } from '@/hooks/queries/useMidCategoryByIdQuery';
 import { useRouter } from 'next/router';
 
-const QuestionPage = () => {
+type IParams = {
+  categoryId: string;
+};
+
+export async function getServerSideProps({ params }: { params: IParams }) {
+  const categoryId = params.categoryId;
+
+  return {
+    props: {
+      categoryId,
+    },
+  };
+}
+
+const QuestionPage = ({ categoryId }: { categoryId: string }) => {
   const router = useRouter();
-  const midCategoryId = router?.query?.categoryId;
+  const midCategoryId = categoryId;
   const { data: midCategory, isSuccess: midCategoryIsSuccess } = useMidCategoryByIdQuery(
     Number(midCategoryId)
   );
