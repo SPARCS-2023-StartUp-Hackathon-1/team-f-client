@@ -1,9 +1,9 @@
 {
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/": "pages/index.html",
-  "/question/[categoryId]": "pages/question/[categoryId].html",
   "/onboarding/[mainCategoryId]": "pages/onboarding/[mainCategoryId].html",
+  "/question/[categoryId]": "pages/question/[categoryId].html",
+  "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
   "/onboarding": "pages/onboarding.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
