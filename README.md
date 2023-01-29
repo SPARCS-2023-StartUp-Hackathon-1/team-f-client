@@ -111,6 +111,8 @@
      └── 📂 types
 ```
 <br/>
+## 환경변수 
+NEXT_PUBLIC_SERVER_URL="http://localhost:8080/api/v1"
 
 ## 💻 Build & Run
 
